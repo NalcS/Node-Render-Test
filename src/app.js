@@ -39,9 +39,9 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: "llooks liek someones got a prwobwme..?",
+        title: "Have yu got a problem fella, no need to fret for i am here.",
         name: "Me",
-        solution: 'fuck off',
+        solution: 'Think what would I do (I as in me and not you)',
     })
 })
 
