@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -25,21 +26,21 @@ app.use(express.static(publicDirPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather app',
-        name: 'Emrik'
+        name: 'Me'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About this thang',
-        name: 'Emrik'
+        name: 'Me'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: "llooks liek someones got a prwobwme..?",
-        name: "Emrik",
+        name: "Me",
         solution: 'fuck off',
     })
 })
@@ -87,7 +88,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404 eror fool',
-        name: 'Emrik da goat',
+        name: 'Me da goat',
         error: 'help article not found'
     })
 })
@@ -95,13 +96,13 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404 eror fool',
-        name: 'Emrik da goat',
+        name: 'Me da goat',
         error: 'page not found'
     })
 })
 
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server running on PORT 3000")
 })
